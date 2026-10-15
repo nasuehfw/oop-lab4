@@ -1,0 +1,60 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Copyright (c) 2026. Anastasiia Gorbunova}
+\PYG{c+cm}{ * National University \PYGZdq{}Odesa Polytechnic\PYGZdq{}}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * Licensed under the Apache License, Version 2.0 (the \PYGZdq{}License\PYGZdq{});}
+\PYG{c+cm}{ * you may not use this file except in compliance with the License.}
+\PYG{c+cm}{ * You may obtain a copy of the License at}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ *     http://apache.org}
+\PYG{c+cm}{ */}
+\PYG{k+kn}{package}\PYG{+w}{ }\PYG{n+nn}{ad251.gorbunova}\PYG{p}{;}
+
+\PYG{c+cm}{/* Імпорт стандартних колекцій Java Collections Framework*/}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.ArrayList}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{// Динамічний лінійний список студентів групи}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.HashMap}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// Асоціативна хеш\PYGZhy{}мапа для індексного пошуку за кодом}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.HashSet}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// Множина для збереження унікальних навчальних дисциплін}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.List}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// Інтерфейс впорядкованих послідовностей даних}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.Map}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// Інтерфейс для структур зберігання пар \PYGZdq{}ключ \PYGZhy{} значення\PYGZdq{}}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.Set}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// Інтерфейс унікальних контейнерів без дублікатів}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Головний керуючий клас\PYGZhy{}оркестратор Лабораторної роботи №4.}
+\PYG{c+cm}{ * Координує виконання спільної практичної частини та індивідуального Варіанту №7.}
+\PYG{c+cm}{ * }
+\PYG{c+cm}{ * @author Анастасія Горбунова}
+\PYG{c+cm}{ * @version 4.0 15 Oct 2026}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{Main}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Головна точка входу в додаток.}
+\PYG{c+cm}{     * }
+\PYG{c+cm}{     * @param args аргументи командного рядка CLI}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{static}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{args}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}=== Лабораторна робота №4 (Облікові структури даних) ===\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Тема: Робота з обліковими структурами даних\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// =====================================================================}
+\PYG{+w}{        }\PYG{c+c1}{// 1. ЗАГАЛЬНА ПРАКТИЧНА ЧАСТИНА (Робота зі списками Student через List)}
+\PYG{+w}{        }\PYG{c+c1}{// =====================================================================}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZhy{}\PYGZhy{}\PYGZhy{} 1. Тестування структури List\PYGZlt{}Student\PYGZgt{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{Student}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{students}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}\PYGZgt{}}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{students}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Student}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Олена Коваль\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{20}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{91.5}\PYG{p}{));}
+\PYG{+w}{        }\PYG{n}{students}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Student}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Андрій Петренко\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{21}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{87.2}\PYG{p}{));}
+\PYG{+w}{        }\PYG{n}{students}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Student}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Марія Шевченко\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{19}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{95.1}\PYG{p}{));}
+
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Student}\PYG{+w}{ }\PYG{n}{student}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{students}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{student}\PYG{p}{.}\PYG{n+na}{printInfo}\PYG{p}{();}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{sum}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Student}\PYG{+w}{ }\PYG{n}{student}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{students}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{sum}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{student}\PYG{p}{.}\PYG{n+na}{getAverageGrade}\PYG{p}{();}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Середній бал навчальної групи: \PYGZpc{}.2f\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sum}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{students}\PYG{p}{.}\PYG{n+na}{size}\PYG{p}{()));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

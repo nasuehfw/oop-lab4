@@ -33,7 +33,7 @@ public class Main {
      * @param args аргументи командного рядка CLI
      */
     public static void main(String[] args) {
-        System.out.print("=== Лабораторна робота №4 (Облікові структури даних) ===\n\n");
+        System.out.print("=== Лабораторна робота №4 ===\n");
         System.out.print("Тема: Робота з обліковими структурами даних\n\n");
 
         // =====================================================================
@@ -54,5 +54,5 @@ public class Main {
             sum += student.getAverageGrade();
         }
         System.out.printf("Середній бал навчальної групи: %.2f\n\n", (sum / students.size()));
-
+    }
 }
