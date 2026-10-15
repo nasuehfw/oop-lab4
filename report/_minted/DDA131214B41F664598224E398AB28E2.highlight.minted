@@ -1,0 +1,38 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Copyright (c) 2026. Anastasiia Gorbunova}
+\PYG{c+cm}{ * National University \PYGZdq{}Odesa Polytechnic\PYGZdq{}}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * Licensed under the Apache License, Version 2.0 (the \PYGZdq{}License\PYGZdq{});}
+\PYG{c+cm}{ * you may not use this file except in compliance with the License.}
+\PYG{c+cm}{ * You may obtain a copy of the License at}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ *     http://apache.org}
+\PYG{c+cm}{ */}
+\PYG{k+kn}{package}\PYG{+w}{ }\PYG{n+nn}{ad251.gorbunova}\PYG{p}{;}
+
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{Main}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{static}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{args}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}=== Лабораторна робота №3 ===\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Тема: Особливості використання змінних і типів даних у Java\PYGZbs{}n\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{// Виклик виконання прикладів пункта №2 із завдання.}
+\PYG{+w}{        }\PYG{n}{TheoryExamples}\PYG{p}{.}\PYG{n+na}{runAllExamples}\PYG{p}{();}
+
+\PYG{+w}{        }\PYG{c+c1}{// Виклик виконання індивідуального завдання. Вариант №7 (Облік фільмів).}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Виконання індивідуального завдання (Варіант №7) \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{Media}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{movies}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Movie}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Початок (Inception)\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Фантастика\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2010}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{148}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{8.8}\PYG{p}{),}
+\PYG{+w}{            }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Movie}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Інтерстеллар\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Драма\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2014}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{169}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{8.7}\PYG{p}{),}
+\PYG{+w}{            }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Movie}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Темний лицар\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Екшн\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2008}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{152}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{9.0}\PYG{p}{),}
+\PYG{+w}{            }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Movie}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Матриця\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Фантастика\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1999}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{136}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{8.7}\PYG{p}{),}
+\PYG{+w}{            }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Movie}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Кримінальне чтиво\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Кримінал\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1994}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{154}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{8.9}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{n}{MovieCatalog}\PYG{+w}{ }\PYG{n}{catalog}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{MovieCatalog}\PYG{p}{(}\PYG{n}{movies}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{catalog}\PYG{p}{.}\PYG{n+na}{printCatalog}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{catalog}\PYG{p}{.}\PYG{n+na}{findHighestRatedMovie}\PYG{p}{();}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\end{MintedVerbatim}

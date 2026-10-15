@@ -1,0 +1,72 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Copyright (c) 2026. Anastasiia Gorbunova}
+\PYG{c+cm}{ * National University \PYGZdq{}Odesa Polytechnic\PYGZdq{}}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * Licensed under the Apache License, Version 2.0 (the \PYGZdq{}License\PYGZdq{});}
+\PYG{c+cm}{ * you may not use this file except in compliance with the License.}
+\PYG{c+cm}{ * You may obtain a copy of the License at}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ *     http://apache.org}
+\PYG{c+cm}{ */}
+\PYG{k+kn}{package}\PYG{+w}{ }\PYG{n+nn}{ad251.gorbunova}\PYG{p}{;}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Дочірній клас, що описує сутність \PYGZdq{}Фільм\PYGZdq{}.}
+\PYG{c+cm}{ * Наслідує базовий клас Media за допомогою ключового слова extends.}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{Movie}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{Media}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+cm}{/** Жанр фільму (об\PYGZsq{}єктний тип String) */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{String}\PYG{+w}{ }\PYG{n}{genre}\PYG{p}{;}
+\PYG{+w}{    }\PYG{c+cm}{/** Рік випуску фільму (примітивний тип int) */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{year}\PYG{p}{;}
+\PYG{+w}{    }\PYG{c+cm}{/** Тривалість у хвилинах (примітивний тип int) */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{duration}\PYG{p}{;}
+\PYG{+w}{    }\PYG{c+cm}{/** Рейтинг фільму від 0.0 до 10.0 (примітивний тип double) */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{rating}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Конструктор класу Movie. Викликає конструктор суперкласу через super.}
+\PYG{c+cm}{     * }
+\PYG{c+cm}{     * @param title назва фільму}
+\PYG{c+cm}{     * @param genre жанр кінострічки}
+\PYG{c+cm}{     * @param year рік виходу на екрани}
+\PYG{c+cm}{     * @param duration хронометраж у хвилинах}
+\PYG{c+cm}{     * @param rating оцінка критиків або глядачів}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{n+nf}{Movie}\PYG{p}{(}\PYG{n}{String}\PYG{+w}{ }\PYG{n}{title}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{String}\PYG{+w}{ }\PYG{n}{genre}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{year}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{duration}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{rating}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kd}{super}\PYG{p}{(}\PYG{n}{title}\PYG{p}{);}\PYG{+w}{ }\PYG{c+cm}{/* Виклик конструктора батьківського класу Person/Media */}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{genre}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{genre}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{year}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{year}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{duration}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{duration}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{rating}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rating}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Переозначений метод виведення інформації про фільм.}
+\PYG{c+cm}{     * Демонструє динамічний об\PYGZsq{}єктний поліморфізм та контроль сигнатури.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{n+nd}{@Override}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{printInfo}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Фільм: \PYGZpc{}\PYGZhy{}25s | Жанр: \PYGZpc{}\PYGZhy{}10s | Рік: \PYGZpc{}d | Тривалість: \PYGZpc{}3d хв | Рейтинг: \PYGZpc{}.1f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }
+\PYG{+w}{                }\PYG{n}{title}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{genre}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{year}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{duration}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{rating}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{// \PYGZhy{}\PYGZhy{}\PYGZhy{} Геттери для доступу до інкапсульованих даних \PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{n}{String}\PYG{+w}{ }\PYG{n+nf}{getGenre}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{genre}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{getYear}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{year}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{getDuration}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{duration}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n+nf}{getRating}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{rating}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

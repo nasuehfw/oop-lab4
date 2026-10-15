@@ -1,0 +1,76 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Copyright (c) 2026. Anastasiia Gorbunova}
+\PYG{c+cm}{ * National University \PYGZdq{}Odesa Polytechnic\PYGZdq{}}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * Licensed under the Apache License, Version 2.0 (the \PYGZdq{}License\PYGZdq{});}
+\PYG{c+cm}{ * you may not use this file except in compliance with the License.}
+\PYG{c+cm}{ * You may obtain a copy of the License at}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ *     http://apache.org}
+\PYG{c+cm}{ */}
+\PYG{k+kn}{package}\PYG{+w}{ }\PYG{n+nn}{ad251.gorbunova}\PYG{p}{;}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Сервісний клас для управління масивом фільмів та виконання розрахунків.}
+\PYG{c+cm}{ * Працює виключно зі структурами масивів без використання колекцій.}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{MovieCatalog}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+cm}{/** Масив посилань на об\PYGZsq{}єкти базового типу Media */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{Media}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{catalog}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Конструктор каталогу фільмів.}
+\PYG{c+cm}{     * }
+\PYG{c+cm}{     * @param catalog масив об\PYGZsq{}єктів для аналізу}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{n+nf}{MovieCatalog}\PYG{p}{(}\PYG{n}{Media}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{catalog}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{catalog}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{catalog}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Виводить інформацію про всі фільми в каталозі.}
+\PYG{c+cm}{     * Використовує поліморфний виклик методу printInfo().}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{printCatalog}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Повний список кінофільмів:\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Media}\PYG{+w}{ }\PYG{n}{item}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{catalog}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{item}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{item}\PYG{p}{.}\PYG{n+na}{printInfo}\PYG{p}{();}\PYG{+w}{ }\PYG{c+cm}{/* Поліморфне виконання для фактичного класу об\PYGZsq{}єкта */}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Знаходить фільм із найвищим рейтингом та виводить його характеристики.}
+\PYG{c+cm}{     * Реалізує лінійний алгоритм пошуку максимуму в масиві об\PYGZsq{}єктів.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{findHighestRatedMovie}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{catalog}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{catalog}\PYG{p}{.}\PYG{n+na}{length}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}[ПОМИЛКА] Каталог порожній або не ініціалізований!\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{n}{Movie}\PYG{+w}{ }\PYG{n}{highestRated}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{;}\PYG{+w}{ }\PYG{c+cm}{/* Посилання на об\PYGZsq{}єкт найкращого фільму */}
+\PYG{+w}{        }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{maxRating}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{;}\PYG{+w}{   }\PYG{c+cm}{/* Локальна змінна для фіксації максимуму */}
+
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Media}\PYG{+w}{ }\PYG{n}{item}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{catalog}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{c+c1}{// Перевіряємо, чи об\PYGZsq{}єкт за посиланням є екземпляром класу Movie}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{item}\PYG{+w}{ }\PYG{k}{instanceof}\PYG{+w}{ }\PYG{n}{Movie}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{Movie}\PYG{+w}{ }\PYG{n}{currentMovie}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Movie}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{item}\PYG{p}{;}\PYG{+w}{ }\PYG{c+cm}{/* Явне приведення типів даних */}
+\PYG{+w}{                }
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{currentMovie}\PYG{p}{.}\PYG{n+na}{getRating}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{maxRating}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{n}{maxRating}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{currentMovie}\PYG{p}{.}\PYG{n+na}{getRating}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{n}{highestRated}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{currentMovie}\PYG{p}{;}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{c+cm}{/* Виведення знайденого лідера рейтингу */}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{highestRated}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}nФільм із найвищим рейтингом:\PYGZbs{}n  \PYGZhy{}\PYGZhy{}\PYGZgt{} \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{highestRated}\PYG{p}{.}\PYG{n+na}{printInfo}\PYG{p}{();}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}
