@@ -71,6 +71,7 @@ public class MovieManager {
      * Виводить унікальну хеш-таблицю жанрів.
      */
     public void printGenres() {
-        System.out.print("\nMножина унікальних жанрів у базі Set:\n  " + uniqueGenres + "\n");
+        System.out.print("\nMножина унікальних жанрів у базі Set:\n  " 
+                            + uniqueGenres + "\n");
     }
 }

@@ -46,7 +46,11 @@ public class Movie {
      * Форматує та виводить унікальні атрибути об'єкта фільму в консоль.
      */
     public void printInfo() {
-        System.out.printf("Фільм: %-25s | Жанр: %-12s | Рік: %d | Рейтинг: %.1f\n", title, genre, year, rating);
+        System.out.printf("Фільм: %-25s | Жанр: %-12s | Рік: %d | Рейтинг: %.1f\n", 
+                            title, 
+                            genre, 
+                            year, 
+                            rating);
     }
 
     // Публічні інкапсульовані методи доступу

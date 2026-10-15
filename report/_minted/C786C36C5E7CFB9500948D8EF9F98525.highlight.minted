@@ -47,7 +47,11 @@
 \PYG{c+cm}{     * Форматує та виводить унікальні атрибути об\PYGZsq{}єкта фільму в консоль.}
 \PYG{c+cm}{     */}
 \PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{printInfo}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Фільм: \PYGZpc{}\PYGZhy{}25s | Жанр: \PYGZpc{}\PYGZhy{}12s | Рік: \PYGZpc{}d | Рейтинг: \PYGZpc{}.1f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{title}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{genre}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{year}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{rating}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Фільм: \PYGZpc{}\PYGZhy{}25s | Жанр: \PYGZpc{}\PYGZhy{}12s | Рік: \PYGZpc{}d | Рейтинг: \PYGZpc{}.1f\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }
+\PYG{+w}{                            }\PYG{n}{title}\PYG{p}{,}\PYG{+w}{ }
+\PYG{+w}{                            }\PYG{n}{genre}\PYG{p}{,}\PYG{+w}{ }
+\PYG{+w}{                            }\PYG{n}{year}\PYG{p}{,}\PYG{+w}{ }
+\PYG{+w}{                            }\PYG{n}{rating}\PYG{p}{);}
 \PYG{+w}{    }\PYG{p}{\PYGZcb{}}
 
 \PYG{+w}{    }\PYG{c+c1}{// Публічні інкапсульовані методи доступу}

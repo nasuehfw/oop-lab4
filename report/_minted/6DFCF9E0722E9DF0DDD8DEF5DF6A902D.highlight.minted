@@ -1,0 +1,79 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Copyright (c) 2026. Anastasiia Gorbunova}
+\PYG{c+cm}{ * National University \PYGZdq{}Odesa Polytechnic\PYGZdq{}}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * Licensed under the Apache License, Version 2.0 (the \PYGZdq{}License\PYGZdq{});}
+\PYG{c+cm}{ * you may not use this file except in compliance with the License.}
+\PYG{c+cm}{ * You may obtain a copy of the License at}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ *     http://apache.org}
+\PYG{c+cm}{ */}
+\PYG{k+kn}{package}\PYG{+w}{ }\PYG{n+nn}{ad251.gorbunova}\PYG{p}{;}
+
+\PYG{c+cm}{/* Підключення системних утиліт та колекцій за стандартом Oracle */}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.ArrayList}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{// Реалізація динамічного списку на базі масиву}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.HashSet}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{// Реалізація хеш\PYGZhy{}множини для зберігання унікальних елементів}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.List}\PYG{p}{;}\PYG{+w}{      }\PYG{c+c1}{// Базовий інтерфейс для роботи зі впорядкованими списками}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{java.util.Set}\PYG{p}{;}\PYG{+w}{       }\PYG{c+c1}{// Базовий інтерфейс для роботи з унікальними множинами даних}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Сервісний менеджер\PYGZhy{}аналізатор колекцій об\PYGZsq{}єктів (індивідуальне завдання Варіант №7).}
+\PYG{c+cm}{ * Використовує механізм узагальнень (Generics) для забезпечення типобезпеки.}
+\PYG{c+cm}{ * }
+\PYG{c+cm}{ * @author Анастасія Горбунова}
+\PYG{c+cm}{ * @version 4.0 15 Oct 2026}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{MovieManager}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+cm}{/** Динамічний лінійний список для збереження послідовності об\PYGZsq{}єктів */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{Movie}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{movieList}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{ArrayList}\PYG{o}{\PYGZlt{}\PYGZgt{}}\PYG{p}{();}
+\PYG{+w}{    }\PYG{c+cm}{/** Хеш\PYGZhy{}множина для автоматичного відсікання дублікатів та унікальних жанрів */}
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{Set}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{uniqueGenres}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{HashSet}\PYG{o}{\PYGZlt{}\PYGZgt{}}\PYG{p}{();}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Додає об\PYGZsq{}єкт фільму до списку та реєструє його жанр у унікальній множині.}
+\PYG{c+cm}{     * }
+\PYG{c+cm}{     * @param movie екземпляр класу Movie}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{addMovie}\PYG{p}{(}\PYG{n}{Movie}\PYG{+w}{ }\PYG{n}{movie}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{movieList}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{movie}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{uniqueGenres}\PYG{p}{.}\PYG{n+na}{add}\PYG{p}{(}\PYG{n}{movie}\PYG{p}{.}\PYG{n+na}{getGenre}\PYG{p}{());}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Проводить ітераційний перебір списку за допомогою циклу for\PYGZhy{}each.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{printAllMovies}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Повний список кінофільмів у базі даних List:\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Movie}\PYG{+w}{ }\PYG{n}{movie}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{movieList}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{movie}\PYG{p}{.}\PYG{n+na}{printInfo}\PYG{p}{();}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Реалізує лінійний алгоритм пошуку об\PYGZsq{}єкта з максимальним рейтингом у List.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{displayHighestRatedMovie}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{movieList}\PYG{p}{.}\PYG{n+na}{isEmpty}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{n}{Movie}\PYG{+w}{ }\PYG{n}{bestMovie}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{movieList}\PYG{p}{.}\PYG{n+na}{get}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Movie}\PYG{+w}{ }\PYG{n}{movie}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{movieList}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{movie}\PYG{p}{.}\PYG{n+na}{getRating}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{bestMovie}\PYG{p}{.}\PYG{n+na}{getRating}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{bestMovie}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{movie}\PYG{p}{;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}nФільм із найвищим рейтингом за Варіантом №7:\PYGZbs{}n  \PYGZhy{}\PYGZhy{}\PYGZgt{} \PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{bestMovie}\PYG{p}{.}\PYG{n+na}{printInfo}\PYG{p}{();}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+cm}{/**}
+\PYG{c+cm}{     * Виводить унікальну хеш\PYGZhy{}таблицю жанрів.}
+\PYG{c+cm}{     */}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{printGenres}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{p}{.}\PYG{n+na}{out}\PYG{p}{.}\PYG{n+na}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}nMножина унікальних жанрів у базі Set:\PYGZbs{}n  \PYGZdq{}}\PYG{+w}{ }
+\PYG{+w}{                            }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{uniqueGenres}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

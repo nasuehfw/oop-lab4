@@ -42,7 +42,10 @@ public class Student {
      * Виводить форматовану інформацію про поточний стан об'єкта у консоль.
      */
     public void printInfo() {
-        System.out.printf("Студент: %-20s | Вік: %d | Середній бал: %.1f\n", name, age, averageGrade);
+        System.out.printf("Студент: %-20s | Вік: %d | Середній бал: %.1f\n", 
+                            name, 
+                            age, 
+                            averageGrade);
     }
 
     // --- Публічні геттери доступу до приватних полів (Інкапсуляція) ---
