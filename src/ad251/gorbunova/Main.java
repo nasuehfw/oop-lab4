@@ -54,5 +54,49 @@ public class Main {
             sum += student.getAverageGrade();
         }
         System.out.printf("Середній бал навчальної групи: %.2f\n\n", (sum / students.size()));
+
+        // =====================================================================
+        // 2. ТЕСТУВАННЯ МНОЖИН (Set) - Демонстрація відсутності дублікатів
+        // =====================================================================
+        System.out.print("--- 2. Тестування структури Set<String> (Унікальність) ---\n");
+        Set<String> subjects = new HashSet<>();
+        subjects.add("Java");
+        subjects.add("Математика");
+        subjects.add("Бази даних");
+        subjects.add("Java"); /* Спроба силового додавання дубліката */
+
+        System.out.print("Навчальні дисципліни (дублікат відфільтровано): " + subjects + "\n\n");
+
+        // =====================================================================
+        // 3. ТЕСТУВАННЯ АСОЦІАТИВНИХ МАП (Map - Пошук за первинним ключем)
+        // =====================================================================
+        System.out.print("--- 3. Тестування структури Map<Integer, String> (Індекси) ---\n");
+        Map<Integer, String> studentMap = new HashMap<>();
+        studentMap.put(101, "Олена Коваль");
+        studentMap.put(102, "Андрій Петренко");
+        studentMap.put(103, "Марія Шевченко");
+
+        System.out.print("Отримання студента за кодом 102: " + studentMap.get(102) + "\n");
+        System.out.print("Повний перелік записів індексної таблиці Map:\n");
+        for (Map.Entry<Integer, String> entry : studentMap.entrySet()) {
+            System.out.print("  Код (Key): " + entry.getKey() + " -> Студент (Value): " + entry.getValue() + "\n");
+        }
+        System.out.print("\n");
+
+        // =====================================================================
+        // 4. ІНДИВІДУАЛЬНЕ ЗАВДАННЯ: ВАРІАНТ №7 (Облік фільмів)
+        // =====================================================================
+        System.out.print("--- 4. Виконання індивідуального Варіанту №7 (Облік фільмів) ---\n");
+        MovieManager manager = new MovieManager();
+        
+        manager.addMovie(new Movie("Початок (Inception)", "Фантастика", 2010, 8.8));
+        manager.addMovie(new Movie("Інтерстеллар", "Драма", 2014, 8.7));
+        manager.addMovie(new Movie("Темний лицар", "Екшн", 2008, 9.0));
+        manager.addMovie(new Movie("Матриця", "Фантастика", 1999, 8.7));
+        manager.addMovie(new Movie("Кримінальне чтиво", "Кримінал", 1994, 8.9));
+
+        manager.printAllMovies();
+        manager.displayHighestRatedMovie();
+        manager.printGenres();
     }
 }
