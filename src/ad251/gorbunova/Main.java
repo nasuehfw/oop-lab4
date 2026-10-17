@@ -79,7 +79,9 @@ public class Main {
         System.out.print("Отримання студента за кодом 102: " + studentMap.get(102) + "\n");
         System.out.print("Повний перелік записів індексної таблиці Map:\n");
         for (Map.Entry<Integer, String> entry : studentMap.entrySet()) {
-            System.out.print("  Код (Key): " + entry.getKey() + " -> Студент (Value): " + entry.getValue() + "\n");
+            System.out.print("  Код (Key): " + entry.getKey() + 
+                             " -> Студент (Value): " + 
+                             entry.getValue() + "\n");
         }
         System.out.print("\n");
 
